@@ -36,22 +36,6 @@ app.post('/login',function(req,res)
  res.sendfile('home.html');
 });
 
-
-app.get('/people', function(req,res){
-  res.write('<html><head></head><body>');
-  var records=['John','Lily','Jane','Alan'];
-  var num_records=records.length;
-  console.log(num_records);
-  for(var i=0;i<num_records;i++)
-  {
-   var p='<p>************************************************</p>';
-   p=p+'<p>Name              : '+records[i]+'</p>';
-   p=p+'<p>************************************************</p>';
-   res.write(p);   
-  } 
-  res.end('</body></html>');
-});
-
 var port=process.env.PORT || 5000;
 server.listen(port);
 console.log("Listening on "+port);
